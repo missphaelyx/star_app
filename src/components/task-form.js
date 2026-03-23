@@ -28,21 +28,8 @@ class TaskForm extends React.Component{
         };
      }
 
-    getTags(){               
-        if(this.props.tags){
-           return this.props.tags.map((tag) => (
-                <TagCheckBox
-                    key = {tag._id}
-                    tag = {tag}
-                    addTag = {(tag) => this.addTag(tag)}
-                    removeTag = {(tag) => this.removeTag(tag)}
-                    parent = "form"
-                />
-            ));
-        }
-        else{
-            return <span>no tags</span>;
-        }
+    getTags(){   
+        return <span>no tags</span>;
     }
 
     submitForm = (e) =>{

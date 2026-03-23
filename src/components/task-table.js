@@ -225,20 +225,8 @@ class TaskRow extends React.Component{
         this.props.onSelect(this.state.id);
     }
 
-    getTags = () =>{        
-        let tags = this.props.tags;
-        
-        if(tags){
-           return tags.map((tag, i) => (
-                <Tag
-                    key = {i}
-                    name = {tag.name}
-                />
-            ));
-         }
-        else{
-            return <span>no tags</span>;
-        }
+    getTags = () =>{     
+        return <span>no tags</span>;
     }
 
     render(){
