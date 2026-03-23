@@ -38,7 +38,6 @@ class App extends Component{
   }
 
   dataCallback = (data) => {
-    console.log(data);
     this.setState(data);
   };
 

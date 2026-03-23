@@ -12,7 +12,6 @@ class ConfigScreen extends Component{
         super(props);
         this.state = {};
         this.props.config.then((data) =>{
-            console.log(data);
             this.state = data;            
         })
     }
