@@ -231,7 +231,7 @@ class TaskRow extends React.Component{
            return tags.map((tag, i) => (
                 <Tag
                     key = {i}
-                    name = {tag.name}
+                    name = {tag}
                 />
             ));
          }
