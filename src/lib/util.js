@@ -72,7 +72,7 @@ var getDueDateString = (task) => {
             return new Date(task.due.datetime).toDateString() + ' ' + new Date(task.due.datetime).toLocaleTimeString();
         }
         else if(task.due.date != null){
-            return new Date(task.due.date).toDateTimeString() + ' ' + new Date(task.due.date).toLocaleTimeString();
+            return new Date(task.due.date).toDateString() + ' ' + new Date(task.due.date).toLocaleTimeString();
         }
     }
     return null;
