@@ -75,13 +75,7 @@ class TaskTable extends React.Component{
         this.setState({filterTags: tags}); 
     }   
 
-    onAddNew(e){
-        //this.props.currentTask = {
-        //    id: 0,
-        //    content: '',
-        //    due_string: '',
-        //    labels: []
-        //  };
+    onAddNew(e){        
         this.props.activatePanel("form");
     }
 
