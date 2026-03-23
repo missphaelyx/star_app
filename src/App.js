@@ -38,11 +38,11 @@ class App extends Component{
   }
 
   dataCallback = (data) => {
+    console.log(data);
     this.setState(data);
   };
 
   agenda = () => {
-    console.log(this.state);
     return this.state.tasks.filter(a => taskDueToday(a));
   };
   
