@@ -10,7 +10,7 @@ var getTasks = (dataCallback, apiKey) => {
         }
     })
     .then(res => res.json())
-    .then((data) => {dataCallback({tasks:data});})
+    .then((data) => {dataCallback({tasks:data.results});})
     .catch(console.log);
 };
 
@@ -23,7 +23,7 @@ var getTags = (dataCallback, apiKey) => {
 
     })
     .then(res => res.json())
-    .then((data) => {dataCallback({tags:data});})
+    .then((data) => {dataCallback({tags:data.results});})
     .catch(console.log);
 };
 
