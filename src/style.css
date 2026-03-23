@@ -334,11 +334,6 @@ a:hover{
     justify-content: flex-end;
   }
   
-  .tools-wrapper .form-group{
-    margin-left: 1rem;
-    padding: 1rem;
-  }
-  
   .tools-wrapper .form-group input,
   .tools-wrapper .form-group select{
     width: unset;
