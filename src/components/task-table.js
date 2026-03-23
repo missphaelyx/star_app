@@ -137,6 +137,15 @@ class TaskTable extends React.Component{
             toolRowClasses = 'content-panel-table table-tools-row'
         }
        
+        const tagSelectors = this.props.tags.map(tag => 
+            <TagCheckBox
+                key = {tag.id}
+                tag = {tag}
+                addTag = {(tag) => this.onAddTag(tag)}
+                removeTag = {(tag) => this.onRemoveTag(tag)}
+                parent = "table"
+            />
+        ) 
 
         return(
             <div className={listClasses}>
@@ -147,7 +156,7 @@ class TaskTable extends React.Component{
                         </div>
                         <div className="form-group">                  
                             <ul className="tag-list">
-                                
+                                {{tagSelectors}}
                             </ul>                         
                         </div>
                         <div className="form-group">
@@ -217,7 +226,19 @@ class TaskRow extends React.Component{
     }
 
     getTags = () =>{     
-        return <span>no tags</span>;
+        let tags = this.props.tags;
+        
+        if(tags){
+           return tags.map((tag, i) => (
+                <Tag
+                    key = {i}
+                    name = {tag.name}
+                />
+            ));
+         }
+        else{
+            return <span>no tags</span>;
+        }
     }
 
     render(){
