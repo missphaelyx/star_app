@@ -156,7 +156,7 @@ class TaskTable extends React.Component{
                         </div>
                         <div className="form-group">                  
                             <ul className="tag-list">
-                                {{tagSelectors}}
+                                {tagSelectors}
                             </ul>                         
                         </div>
                         <div className="form-group">
