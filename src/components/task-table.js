@@ -51,7 +51,6 @@ class TaskTable extends React.Component{
 
     onSearch = (e) =>{
         e.preventDefault();
-        console.log(e);
         let search = e.target[0].value;
         this.setState({searchParam: search}); 
     }
@@ -96,8 +95,7 @@ class TaskTable extends React.Component{
             tasksClone = tasksClone.filter(a => a.content.toLowerCase().includes(this.state.searchParam.toLowerCase()));            
         }        
 
-        if(this.state.filterTags.length){         
-            console.log(this.state.filterTags);
+        if(this.state.filterTags.length){     
             tasksClone = tasksClone.filter(a => a.labels.some(v => this.state.filterTags.includes(v)));       
         }
 
