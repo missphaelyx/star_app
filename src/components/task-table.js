@@ -22,7 +22,7 @@ class TaskTable extends React.Component{
             sortOrder:"asc",
             searchParam:"",
             filterParam: "All",
-            filterTags:[]
+            filterTags:[],
         };
     }  
 
@@ -49,8 +49,9 @@ class TaskTable extends React.Component{
         this.setState({filterParam: filterParam});       
     }
 
-    onSearch(e){
+    onSearch = (e) =>{
         e.preventDefault();
+        console.log(e);
         let search = e.target[0].value;
         this.setState({searchParam: search}); 
     }
@@ -61,13 +62,13 @@ class TaskTable extends React.Component{
 
     onAddTag(e){
         var tags = this.state.filterTags;
-        tags.push(parseInt(e));
+        tags.push(e);
         this.setState({filterTags: tags}); 
     }
 
     onRemoveTag(e){
         var tags = this.state.filterTags;
-        var tagIndex = tags.indexOf(parseInt(e));
+        var tagIndex = tags.indexOf(e);
         if(tagIndex >= 0){
             tags.splice(tagIndex, 1);
         }
@@ -75,12 +76,12 @@ class TaskTable extends React.Component{
     }   
 
     onAddNew(e){
-        this.props.currentTask = {
-            id: 0,
-            content: '',
-            due_string: '',
-            labels: []
-          };
+        //this.props.currentTask = {
+        //    id: 0,
+        //    content: '',
+        //    due_string: '',
+        //    labels: []
+        //  };
         this.props.activatePanel("form");
     }
 
@@ -98,10 +99,11 @@ class TaskTable extends React.Component{
         tasksClone = tasksClone.filter(a => getDueDate(a) != null);      
 
         if(this.state.searchParam){
-            tasksClone = tasksClone.filter(a => a.content.includes(this.state.searchParam));            
+            tasksClone = tasksClone.filter(a => a.content.toLowerCase().includes(this.state.searchParam.toLowerCase()));            
         }        
 
-        if(this.state.filterTags.length){            
+        if(this.state.filterTags.length){         
+            console.log(this.state.filterTags);
             tasksClone = tasksClone.filter(a => a.labels.some(v => this.state.filterTags.includes(v)));       
         }
 

@@ -33,8 +33,7 @@ var createTask = (task, callback, apiKey) => {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            'Authorization' : 'Bearer ' + apiKey,
-            'X-Request-ID': uuid()
+            'Authorization' : 'Bearer ' + apiKey
             },
             body: JSON.stringify(task,null,2)
         })
@@ -48,8 +47,7 @@ var createTask = (task, callback, apiKey) => {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                'Authorization' : 'Bearer ' + apiKey,
-                'X-Request-ID': uuid()
+                'Authorization' : 'Bearer ' + apiKey
             },
         body: JSON.stringify(task,null,2)
         })

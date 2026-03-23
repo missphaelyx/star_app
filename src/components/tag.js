@@ -19,10 +19,10 @@ class TagCheckBox extends React.Component{
    
     onCheckBoxChanged = (e) =>{
         if(e.target.checked){
-            this.props.addTag(parseInt(e.target.value));
+            this.props.addTag(e.target.value);
         }
         else{
-            this.props.removeTag(parseInt(e.target.value));
+            this.props.removeTag(e.target.value);
         }
     }
 
@@ -33,7 +33,7 @@ class TagCheckBox extends React.Component{
     render(){
         return(                
             <li>
-                <input type="checkbox" name={this.props.tag.name} id={this.tagId()} value={this.props.tag.id} onChange={this.onCheckBoxChanged} />
+                <input type="checkbox" name={this.props.tag.name} id={this.tagId()} value={this.props.tag.name} onChange={this.onCheckBoxChanged} />
                 <label className="tag-label" htmlFor={this.tagId()}><FontAwesomeIcon icon={faTag}/> {this.props.tag.name}</label>
             </li>
         )
