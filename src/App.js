@@ -42,6 +42,7 @@ class App extends Component{
   };
 
   agenda = () => {
+    console.log(this.state);
     return this.state.tasks.filter(a => taskDueToday(a));
   };
   
@@ -151,7 +152,7 @@ class App extends Component{
 
   render(){
     const backgroundColor = this.state.config.colourScheme === "1" ? this.state.currentDynamicColour : this.state.config.staticColour;
-    const containerStyle = { backgroundColor : backgroundColor };
+    const containerStyle = { backgroundColor : backgroundColor };    
     return(
       <div className='wrapper noselect'>       
         <div className='container centre' style={containerStyle}> 
