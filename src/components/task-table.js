@@ -225,8 +225,7 @@ class TaskRow extends React.Component{
         this.props.onSelect(this.state.id);
     }
 
-    getTags = () =>{     
-        let tags = this.props.tags;
+    getTags = (tags) =>{             
         
         if(tags){
            return tags.map((tag, i) => (
@@ -245,7 +244,7 @@ class TaskRow extends React.Component{
         return(                       
             <tr >
                 <td>{this.props.task.content}</td>
-                <td>{this.getTags()}</td>
+                <td>{this.getTags(this.props.task.labels)}</td>
                 {this.props.showDate ? <td>{getDueDateString(this.props.task)}</td> : <td></td>}
                 <td className='button-column'>                    
                     <button title="complete task" className="action-button" type="button" onClick={() => this.doCompleteTask()}><FontAwesomeIcon icon={faCheck} /></button>
