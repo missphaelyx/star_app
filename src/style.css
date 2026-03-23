@@ -408,4 +408,8 @@ a:hover{
     overflow-x: hidden;
     justify-content: unset;
   }
+
+  .tag-selector{
+    width: 48rem;
+  }
   

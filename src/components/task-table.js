@@ -148,7 +148,7 @@ class TaskTable extends React.Component{
                         <div className="form-group">
                             <button type="button" onClick={(e) => this.onAddNew(e)}>Add New <FontAwesomeIcon icon={faPlus} /></button>
                         </div>
-                        <div className="form-group">                  
+                        <div className="form-group tag-selector">                  
                             <ul className="tag-list">
                                 {tagSelectors}
                             </ul>                         
